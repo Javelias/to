@@ -1,8 +1,8 @@
 package com.to.data.csv;
 
-import com.to.data.model.DefaultSchedule;
-import com.to.data.model.ISchedule;
-import com.to.data.model.Volunteer;
+import com.to.data.model.data.memory.DefaultConfiguration;
+import com.to.data.model.data.IConfiguration;
+import com.to.data.model.volunteer.Volunteer;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 
@@ -18,7 +18,7 @@ public class CsvImporter {
         CsvImporter.importSchedule("beurtrol_25062018_07102018.csv");
     }
 
-    public static ISchedule importSchedule(String fileName) {
+    public static IConfiguration importSchedule(String fileName) {
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(CsvImporter.class.getClassLoader().getResourceAsStream(fileName)))) {
 
@@ -27,17 +27,19 @@ public class CsvImporter {
                     .withIgnoreHeaderCase()
                     .withTrim());
 
-            DefaultSchedule schedule = new DefaultSchedule(
+            DefaultConfiguration schedule = new DefaultConfiguration(
                     LocalDate.of(2018, Month.JUNE, 25),
                     LocalDate.of(2018, Month.OCTOBER, 7));
 
             csvParser.getRecords().stream().forEach(csvRecord -> {
-                if (csvRecord.get("Datum") != null) {
+                String recordLine = csvRecord.get(0);
+                if (recordLine.startsWith("Datum")) {
+                    // header line
+                } else if (recordLine.startsWith(";")) {
+                    schedule.getTimeSlot("02-07").setVolunteer(new Volunteer(46, "Mark", "Valdez"));
+                } else {
                     // date
 
-                } else {
-
-                    schedule.getTimeSlot("02-07").setVolunteer(new Volunteer(46, "Mark", "Valdez"));
                 }
             });
 

@@ -1,22 +1,34 @@
 package com.to.data;
 
-import com.to.data.csv.CsvImporter;
-import com.to.data.model.DefaultSchedule;
-import com.to.data.model.ISchedule;
-import com.to.data.model.Volunteer;
+import com.to.data.model.data.IConfiguration;
+import com.to.data.model.data.memory.InMemoryData;
+import com.to.data.model.preference.VolunteerGeneralPreference;
+import com.to.data.model.schedule.Schedule;
+import com.to.data.model.service.IData;
+import com.to.data.model.service.ILogic;
+import com.to.data.server.LogicBean;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 
 public class GenerateRosterTest {
 
     @Test
     public void generateRoster() {
-        ISchedule schedule = CsvImporter.importSchedule("beurtrol_25062018_07102018.csv");
-        schedule.getTimeSlots().stream().forEach(timeSlot -> {
-            System.out.println(timeSlot);
-        });
-
+        IData data = new InMemoryData();
+        // apply standard config
+        IConfiguration configuration = data.getConfiguration("Default");
+        // create schedule
+        Schedule schedule = new Schedule(
+                configuration,
+                LocalDate.of(2018, Month.JUNE, 25),
+                LocalDate.of(2018, Month.OCTOBER, 7));
+        // fetch all preferences for the volunteers
+        List<VolunteerGeneralPreference> preferences = data.getVolunteerPreferences(schedule);
+        // generate timeslots based on preferences
+        ILogic logic = new LogicBean();
+        logic.generate(preferences);
     }
 }

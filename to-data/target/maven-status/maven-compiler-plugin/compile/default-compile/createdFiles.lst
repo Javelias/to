@@ -1,0 +1,8 @@
+com\to\data\model\TimeSlot.class
+com\to\data\model\SlotType.class
+com\to\data\model\DayRecurrence.class
+com\to\data\model\TimeInterval.class
+com\to\data\model\Volunteer.class
+com\to\data\model\DefaultSchedule.class
+com\to\data\csv\CsvImporter.class
+com\to\data\model\ISchedule.class

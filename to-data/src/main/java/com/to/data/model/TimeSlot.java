@@ -6,7 +6,6 @@ public class TimeSlot {
     private TimeInterval interval;
     private SlotType slotType;
     private DayRecurrence recurrence;
-    private Volunteer volunteer;
 
     public TimeSlot(TimeInterval interval, SlotType slotType) {
         this(interval, slotType, null);
@@ -42,21 +41,12 @@ public class TimeSlot {
         this.recurrence = recurrence;
     }
 
-    public Volunteer getVolunteer() {
-        return volunteer;
-    }
-
-    public void setVolunteer(Volunteer volunteer) {
-        this.volunteer = volunteer;
-    }
-
     @Override
     public String toString() {
         return "TimeSlot{" +
                 "interval=" + interval +
                 ", slotType=" + slotType +
                 ", recurrence=" + recurrence +
-                ", volunteer=" + volunteer +
                 '}';
     }
 }

@@ -1,4 +1,6 @@
-package com.to.data.model;
+package com.to.data.model.volunteer;
+
+import com.to.data.model.preference.TelephonePreferences;
 
 public class Volunteer {
 
@@ -10,5 +12,11 @@ public class Volunteer {
         this.number = number;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+
+
+    public void setTelephonePreference(TelephonePreferences telephonePreferences) {
+
     }
 }

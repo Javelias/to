@@ -33,4 +33,12 @@ public class DayRecurrence {
     public void setRecurrence(Period recurrence) {
         this.recurrence = recurrence;
     }
+
+    @Override
+    public String toString() {
+        return "DayRecurrence{" +
+                "dayOfWeek=" + dayOfWeek +
+                ", recurrence=" + recurrence +
+                '}';
+    }
 }
