@@ -1,11 +1,11 @@
 package com.to.data.model.preference;
 
-import com.to.data.model.TimeInterval;
+import com.to.data.model.time.TimeInterval;
 import com.to.data.model.volunteer.Volunteer;
 
 import java.time.DayOfWeek;
 
-public class VolunteerGeneralPreference {
+public class VolunteerPreference {
 
     enum PreferenceType {
         PREFERRED, POSSIBLE

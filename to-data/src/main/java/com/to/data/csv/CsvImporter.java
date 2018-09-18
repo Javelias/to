@@ -1,7 +1,7 @@
 package com.to.data.csv;
 
-import com.to.data.model.data.memory.DefaultConfiguration;
-import com.to.data.model.data.IConfiguration;
+import com.to.data.model.data.memory.TOAScheduleConfiguration;
+import com.to.data.model.data.IScheduleConfiguration;
 import com.to.data.model.volunteer.Volunteer;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -18,7 +18,7 @@ public class CsvImporter {
         CsvImporter.importSchedule("beurtrol_25062018_07102018.csv");
     }
 
-    public static IConfiguration importSchedule(String fileName) {
+    public static IScheduleConfiguration importSchedule(String fileName) {
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(CsvImporter.class.getClassLoader().getResourceAsStream(fileName)))) {
 
@@ -27,7 +27,7 @@ public class CsvImporter {
                     .withIgnoreHeaderCase()
                     .withTrim());
 
-            DefaultConfiguration schedule = new DefaultConfiguration(
+            TOAScheduleConfiguration schedule = new TOAScheduleConfiguration(
                     LocalDate.of(2018, Month.JUNE, 25),
                     LocalDate.of(2018, Month.OCTOBER, 7));
 

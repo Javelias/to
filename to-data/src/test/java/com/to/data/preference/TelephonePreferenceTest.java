@@ -1,6 +1,6 @@
 package com.to.data.preference;
 
-import com.to.data.model.data.memory.DefaultConfiguration;
+import com.to.data.model.data.memory.TOAScheduleConfiguration;
 import com.to.data.model.volunteer.Volunteer;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class TelephonePreferenceTest {
     @Test
     public void name() {
 
-        DefaultConfiguration schedule = new DefaultConfiguration(
+        TOAScheduleConfiguration schedule = new TOAScheduleConfiguration(
                 LocalDate.of(2018, Month.JUNE, 25),
                 LocalDate.of(2018, Month.OCTOBER, 7));
 

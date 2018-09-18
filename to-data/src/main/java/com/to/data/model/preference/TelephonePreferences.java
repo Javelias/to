@@ -1,6 +1,6 @@
 package com.to.data.model.preference;
 
-import com.to.data.model.data.IConfiguration;
+import com.to.data.model.data.IScheduleConfiguration;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
@@ -15,20 +15,20 @@ public class TelephonePreferences {
      * ☒☒   Door twee vakjes aan te duiden, geef je je voorkeuren aan.
      * We waarderen het als je méér mogelijkheden kan aanduiden. Dit helpt om de bezetting goed te verdelen.
      */
-    public List<VolunteerGeneralPreference> getWeekSchedule(IConfiguration schedule);
+    public List<VolunteerPreference> getWeekSchedule(IScheduleConfiguration schedule);
 
     /**
      * Duid minstens drie weekendmogelijkheden aan, waarvan één op zaterdag tussen 13 uur en 01 uur of op
      * zondag tussen 13 uur en 22 uur. Het helpt als je meer mogelijkheden kan aanduiden. Duid ook mogelijkheden op
      * feestdagen aan. Deze tellen als weekenddiensten. We verdelen feestdagen over de groep.
      */
-    private IConfiguration weekendSchedule;
+    private IScheduleConfiguration weekendSchedule;
 
     /**
      * Geef minstens twee mogelijkheden voor de voornacht- (23-02) diensten én twee mogelijkheden voor de nanacht-
      * (02-07) diensten op. Ook hier helpt het als je nog meer mogelijkheden kan aanduiden.
      */
-    private IConfiguration nightSchedule;
+    private IScheduleConfiguration nightSchedule;
 
     /**
      * We houden rekening met 6 weken afwezigheid per jaar. Die kan je hier aanduiden.

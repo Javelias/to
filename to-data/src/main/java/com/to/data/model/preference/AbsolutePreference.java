@@ -1,6 +1,6 @@
 package com.to.data.model.preference;
 
-import com.to.data.model.TimeInterval;
+import com.to.data.model.time.TimeInterval;
 
 import java.time.LocalDate;
 

@@ -1,15 +1,16 @@
 package com.to.data.model.service;
 
-import com.to.data.model.data.IConfiguration;
-import com.to.data.model.preference.VolunteerGeneralPreference;
+import com.to.data.model.data.IScheduleConfiguration;
+import com.to.data.model.preference.GeneralCriteria;
+import com.to.data.model.preference.VolunteerPreference;
+import com.to.data.model.schedule.ISchedule;
 import com.to.data.model.schedule.Schedule;
-import com.to.data.model.volunteer.Volunteer;
 
 import java.util.List;
 
 public interface IData {
 
-    IConfiguration getConfiguration(String name);
+    IScheduleConfiguration getConfiguration(String name);
 
-    List<VolunteerGeneralPreference> getVolunteerPreferences(Schedule schedule);
+    List<VolunteerPreference> getVolunteerPreferences(ISchedule schedule);
 }

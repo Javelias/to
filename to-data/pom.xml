@@ -21,6 +21,13 @@
             <version>1.5</version>
         </dependency>
 
+        <!-- date recurrence modelled https://tools.ietf.org/html/rfc5545#section-3.8.5 -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-calendar</artifactId>
+            <version>v3-rev305-1.23.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
