@@ -7,13 +7,13 @@ import java.time.DayOfWeek;
 
 public class VolunteerPreference {
 
-    enum PreferenceType {
+    public enum Type {
         PREFERRED, POSSIBLE
     }
 
     private DayOfWeek dayOfWeek;
     private TimeInterval timeInterval;
-    private PreferenceType preferenceType;
+    private Type preferenceType;
     private Volunteer volunteer;
 
     public DayOfWeek getDayOfWeek() {
@@ -32,11 +32,11 @@ public class VolunteerPreference {
         this.timeInterval = timeInterval;
     }
 
-    public PreferenceType getPreferenceType() {
+    public Type getPreferenceType() {
         return preferenceType;
     }
 
-    public void setPreferenceType(PreferenceType preferenceType) {
+    public void setPreferenceType(Type preferenceType) {
         this.preferenceType = preferenceType;
     }
 
