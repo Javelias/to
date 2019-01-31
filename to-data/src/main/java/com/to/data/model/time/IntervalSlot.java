@@ -3,8 +3,14 @@ package com.to.data.model.time;
 
 import com.to.data.model.SlotType;
 
+import java.time.LocalDate;
+
 public class IntervalSlot {
 
+    // day (mo, tu, etc)
+
+
+    // time slot (8-10)
     private TimeInterval timeInterval;
 
     // see RFC5545 https://tools.ietf.org/html/rfc5545#section-3.8.5
@@ -53,5 +59,8 @@ public class IntervalSlot {
                 ", slotType=" + slotType +
                 ", recurrence=" + recurrence +
                 '}';
+    }
+
+    public LocalDate getDay() {
     }
 }

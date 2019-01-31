@@ -5,16 +5,17 @@ import com.to.data.model.volunteer.Volunteer;
 
 import java.time.DayOfWeek;
 
-public class VolunteerPreference {
-
-    public enum Type {
-        PREFERRED, POSSIBLE
-    }
+public class GeneralPreference implements IPreference {
 
     private DayOfWeek dayOfWeek;
     private TimeInterval timeInterval;
-    private Type preferenceType;
-    private Volunteer volunteer;
+    private PreferenceType preferenceType;
+
+    public GeneralPreference(DayOfWeek dayOfWeek, TimeInterval timeInterval, PreferenceType preferenceType) {
+        this.dayOfWeek = dayOfWeek;
+        this.timeInterval = timeInterval;
+        this.preferenceType = preferenceType;
+    }
 
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
@@ -32,19 +33,11 @@ public class VolunteerPreference {
         this.timeInterval = timeInterval;
     }
 
-    public Type getPreferenceType() {
+    public PreferenceType getPreferenceType() {
         return preferenceType;
     }
 
-    public void setPreferenceType(Type preferenceType) {
+    public void setPreferenceType(PreferenceType preferenceType) {
         this.preferenceType = preferenceType;
-    }
-
-    public Volunteer getVolunteer() {
-        return volunteer;
-    }
-
-    public void setVolunteer(Volunteer volunteer) {
-        this.volunteer = volunteer;
     }
 }

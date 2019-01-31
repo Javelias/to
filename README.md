@@ -1,4 +1,9 @@
 TODO
-1/ setup website
-2/ volunteer preferences
-2/ generate roster
+* vrijwilliger beschikbaarheid
+- TO agenda + TO schema
+
+- react cursus
+- vrijwilligers beschikbaarheid invoer
+- vrijwilligers agenda generatie
+
+https://www.npmjs.com/package/react-moment
